@@ -1,0 +1,44 @@
+import random
+import os
+import art
+
+def choice():
+    dificulty = input("Choose a dificulty level: 'easy'  'hard' = ").lower()
+    if dificulty == 'easy':
+        return 10
+    elif dificulty == 'hard':
+        return 5
+    else:
+        print("Please choice valid option ")
+        return choice()
+
+def work(attempts):
+    guess = 0
+    while attempts>0 and guess != target_number:
+        print(f"You have {attempts} attempts left ")
+        guess = int(input("Make a guess = "))
+        if guess > target_number:
+            print("Too high \n Guess again ")
+            attempts-=1
+        elif guess < target_number:
+            print("Too low \n Guess again ")
+            attempts-=1
+        else:
+            print("You have guessed it corectly ")
+            return
+    print(f"You have no attempts left , YOU LOSE \n Number was = {target_number}")
+game = True
+number = list(range(1,101))
+while game:
+    print(art.logo)
+    print("Welcome to the number gusseing game \n")
+    print("I am thinking of a number between 1 to 100")
+    target_number = random.choice(number)
+    attempts = choice()
+    result = work(attempts)
+    wish = input("Do you want play another round ? 'Y'  'N' = ").lower()
+    if wish == 'n':
+        game= False
+    if wish == 'y':
+        os.system('clear')
+
