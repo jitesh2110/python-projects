@@ -17,5 +17,5 @@ for i in info:
             letter = letter.replace('NAME',i['name'])
             with smtplib.SMTP('smtp.gmail.com') as connection:
                 connection.starttls()
-                connection.login(user='jsnewth@gmail.com', password='qrrc tibt icph shjo')
-                connection.sendmail(from_addr='jsnewth@gmail.com',to_addrs=i['email'],msg=f"Subject:Birthday wish\n\n{letter}")
+                connection.login(user='your email', password='your email app password')
+                connection.sendmail(from_addr='your email',to_addrs=i['email'],msg=f"Subject:Birthday wish\n\n{letter}")
