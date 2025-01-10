@@ -17,11 +17,11 @@ class Gui:
         self.que = self.canva.create_text(150,125,text='question will be here',font=("Arial",20,'italic'),width=280)
         self.canva.grid(row =1,column =0, columnspan =2)
 
-        self.t = tkinter.PhotoImage(file='images/true.png')
+        self.t = tkinter.PhotoImage(file='true.png')
         self.rbutton = tkinter.Button(image=self.t,pady=20,padx=20,command=self.right)
         self.rbutton.grid(row=2,column =0,pady=20,padx=20)
 
-        self.f = tkinter.PhotoImage(file='images/false.png')
+        self.f = tkinter.PhotoImage(file='false.png')
         self.wbutton = tkinter.Button(image=self.f,pady=20,padx=20,command=self.wrong)
         self.wbutton.grid(row=2, column=1,pady=20,padx=20)
 
